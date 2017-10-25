@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/act_label"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="12dp"
-        android:layout_toStartOf="@+id/venue_label"
-        android:text="TextView" />
+        android:background="@color/white">
 
-    <TextView
-        android:id="@+id/venue_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/act_label"
-        android:layout_marginRight="12dp"
-        android:text="TextView" />
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/act_image"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/act_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:text="act_name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/act_image" />
+
+        <TextView
+            android:id="@+id/act_venue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/act_name"
+            android:layout_below="@+id/act_name"
+            android:text="act_venue"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/act_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/act_venue"
+            android:layout_below="@+id/act_venue"
+            android:text="act_time"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/act_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="act_price"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_below="@+id/act_time"
+            android:layout_alignStart="@+id/act_time" />
+
+        <ImageButton
+            android:id="@+id/drop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="14dp"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -10,15 +10,15 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Jason on 10/9/2017.
+ * Created by joely on 10/24/2017.
  */
 
-public class ActArrayAdapter extends BaseAdapter {
+public class VenuesAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater mInflater;
-    private ArrayList<Acts> mDataSource;
+    private ArrayList<Venues> mDataSource;
 
-    public ActArrayAdapter(Context context, ArrayList<Acts> items) {
+    public VenuesAdapter(Context context, ArrayList<Venues> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -30,9 +30,7 @@ public class ActArrayAdapter extends BaseAdapter {
     }
 
     @Override
-    public Acts getItem(int position) {
-        return mDataSource.get(position);
-    }
+    public Venues getItem(int position) { return mDataSource.get(position); }
 
     @Override
     public long getItemId(int position) {
@@ -41,19 +39,10 @@ public class ActArrayAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = mInflater.inflate(R.layout.act_cell, parent, false);
+        View rowView = mInflater.inflate(R.layout.venue_cell, parent, false);
 
-        TextView act = rowView.findViewById(R.id.act_name);
-        act.setText(getItem(position).getName());
-
-        TextView venue = rowView.findViewById(R.id.act_venue);
+        TextView venue = rowView.findViewById(R.id.venue_name);
         venue.setText(getItem(position).getVenue());
-
-        TextView time = rowView.findViewById(R.id.act_time);
-        time.setText(getItem(position).getTime());
-
-        TextView price = rowView.findViewById(R.id.act_price);
-        price.setText(getItem(position).getPrice());
 
         return rowView;
     }
