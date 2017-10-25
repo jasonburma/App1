@@ -1,6 +1,5 @@
 package burmacodes.app1;
 
-import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
@@ -8,10 +7,12 @@ import io.realm.RealmObject;
  */
 
 public class Acts extends RealmObject{
-    private String id;
+
+    private byte[] image;
     private String name;
     private String venue;
-    private byte[] image;
+    private String time;
+    private String price;
 
     public byte[] getImage() {
         return image;
@@ -19,14 +20,6 @@ public class Acts extends RealmObject{
 
     public void setImage(byte[] image) {
         this.image = image;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -44,4 +37,21 @@ public class Acts extends RealmObject{
     public void setVenue(String venue) {
         this.venue = venue;
     }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
 }
