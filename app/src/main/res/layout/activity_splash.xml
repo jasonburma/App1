@@ -30,7 +30,8 @@
             android:text="Tonight's Tunes"
             android:textColor="@color/black"
             android:textSize="23sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:fontFamily="sans-serif" />
 
     </LinearLayout>
 
