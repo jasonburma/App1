@@ -1,10 +1,13 @@
 package burmacodes.app1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -43,6 +46,10 @@ public class VenuesAdapter extends BaseAdapter{
 
         TextView venue = rowView.findViewById(R.id.venue_name);
         venue.setText(getItem(position).getVenue());
+
+        ImageView myImageView = (ImageView)rowView.findViewById(R.id.venue_image);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(getItem(position).getImage() , 0, getItem(position).getImage().length);
+        myImageView.setImageBitmap(bitmap);
 
         return rowView;
     }
