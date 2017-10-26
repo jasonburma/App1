@@ -1,12 +1,19 @@
 package burmacodes.app1;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -55,6 +62,13 @@ public class ActArrayAdapter extends BaseAdapter {
         TextView price = rowView.findViewById(R.id.act_price);
         price.setText(getItem(position).getPrice());
 
+
+        /*ImageView image=(ImageView)rowView.findViewById(R.id.act_image);
+        image.setImageResource(ActArrayAdapter.items.get(position).drawableId);*/
+
+        ImageView myImageView = (ImageView)rowView.findViewById(R.id.act_image);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(getItem(position).getImage() , 0, getItem(position).getImage().length);
+        myImageView.setImageBitmap(bitmap);
         return rowView;
     }
 }
