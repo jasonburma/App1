@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,24 +20,64 @@
             android:id="@+id/venue_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
+            android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/venue_image"
             android:text="venue_name"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/drop_button"
+        <TextView
+            android:id="@+id/relative_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/venue_name"
+            android:layout_toEndOf="@+id/venue_image"
+            android:text="relative_location" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_location"
+            android:layout_toEndOf="@+id/venue_image"
+            android:autoLink="map"
+            android:autoSizeTextType="uniform"
+            android:linksClickable="true"
+            android:text="address" />
+
+        <TextView
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address"
+            android:layout_toEndOf="@+id/venue_image"
+            android:autoLink="phone"
+            android:linksClickable="true"
+            android:text="phone_number" />
+
+        <TextView
+            android:id="@+id/today_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone_number"
+            android:layout_toEndOf="@+id/venue_image"
+            android:layout_marginRight="20dp"
+            android:text="today_hours" />
+
+        <TextView
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/today_hours"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="14dp"
-            android:background="@color/colorPrimary"
-            android:elevation="5dp"
-            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+            android:layout_marginEnd="36dp"
+            android:layout_toRightOf="@+id/today_hours"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:autoSizeTextType="uniform"
+            android:text="Website" />
+
 
     </RelativeLayout>
 </LinearLayout>
