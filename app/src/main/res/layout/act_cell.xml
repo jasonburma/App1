@@ -59,16 +59,6 @@
             android:layout_below="@+id/act_time"
             android:layout_alignStart="@+id/act_time" />
 
-        <ImageButton
-            android:id="@+id/drop_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="14dp"
-            android:background="@color/colorPrimary"
-            android:elevation="5dp"
-            app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
     </RelativeLayout>
 </LinearLayout>

@@ -1,12 +1,17 @@
 package burmacodes.app1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,9 +52,30 @@ public class VenuesAdapter extends BaseAdapter{
         TextView venue = rowView.findViewById(R.id.venue_name);
         venue.setText(getItem(position).getVenue());
 
+        TextView phone = rowView.findViewById(R.id.phone_number);
+        phone.setText(getItem(position).getPhone());
+
+        TextView address = rowView.findViewById(R.id.address);
+        address.setText(getItem(position).getAddress());
+
+        TextView location = rowView.findViewById(R.id.relative_location);
+        location.setText(getItem(position).getLocation());
+
+        TextView hours = rowView.findViewById(R.id.today_hours);
+        hours.setText(getItem(position).getHours());
+
+        TextView web = rowView.findViewById(R.id.website);
+        web.setText(getItem(position).getWebsite());
+
+
+
+
+
         ImageView myImageView = (ImageView)rowView.findViewById(R.id.venue_image);
         Bitmap bitmap = BitmapFactory.decodeByteArray(getItem(position).getImage() , 0, getItem(position).getImage().length);
         myImageView.setImageBitmap(bitmap);
+
+
 
         return rowView;
     }
